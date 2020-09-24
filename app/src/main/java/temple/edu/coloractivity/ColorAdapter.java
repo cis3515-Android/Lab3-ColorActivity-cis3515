@@ -1,18 +1,32 @@
 package temple.edu.coloractivity;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class ColorAdapter extends BaseAdapter {
+
+    Context context;
+    ArrayList<String> colors;
+
+    public ColorAdapter(Context context, ArrayList<String> colors){
+        this.context = context;
+        this.colors = colors;
+    }
+
     @Override
     public int getCount() {
-        return 0;
+        return colors.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return colors.get(position);
     }
 
     @Override
@@ -22,6 +36,19 @@ public class ColorAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+
+        TextView textView;
+
+        if (convertView == null){
+            textView = new TextView(context);
+        } else{
+            textView = (TextView) convertView;
+        }
+
+        textView.setText(colors.get(position));
+        textView.setBackgroundColor(Color.parseColor(colors.get(position)));
+
+        return textView;
     }
+
 }

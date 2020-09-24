@@ -5,14 +5,13 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ColorActivity">
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+        tools:context=".ColorActivity" android:id="@+id/colorSpinner">
+    <Spinner
+            android:layout_width="115dp"
+            android:layout_height="40dp" android:id="@+id/spinner"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="7dp" android:layout_marginEnd="7dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="276dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="415dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
