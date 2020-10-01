@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ColorActivity</string>
+    <string name="prompt">Choose A Color</string>
 </resources>

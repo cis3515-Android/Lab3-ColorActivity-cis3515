@@ -14,7 +14,7 @@ public class ColorAdapter extends BaseAdapter {
     Context context;
     ArrayList<String> colors;
 
-    public ColorAdapter(Context context, ArrayList<String> colors){
+    public ColorAdapter(Context context, ArrayList<String> colors) {
         this.context = context;
         this.colors = colors;
     }
@@ -39,16 +39,26 @@ public class ColorAdapter extends BaseAdapter {
 
         TextView textView;
 
-        if (convertView == null){
+        if (convertView == null) {
             textView = new TextView(context);
-        } else{
+
+        } else {
             textView = (TextView) convertView;
         }
 
         textView.setText(colors.get(position));
-        textView.setBackgroundColor(Color.parseColor(colors.get(position)));
+        textView.setBackgroundColor(Color.WHITE);
+
 
         return textView;
     }
+
+    @Override
+    public View getDropDownView(int position, View convertView, ViewGroup parent) {
+        View v = getView(position, convertView, parent);
+        v.setBackgroundColor(Color.parseColor(colors.get(position)));
+        return v;
+    }
+
 
 }
